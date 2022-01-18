@@ -1,0 +1,43 @@
+<%= form_with(model: tablefriend) do |form| %>
+  <% if tablefriend.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(tablefriend.errors.count, "error") %> prohibited this tablefriend from being saved:</h2>
+
+      <ul>
+        <% tablefriend.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.text_field :first_name, class:"form-control", placeholder:"First name" %>
+  </div>
+
+</br>
+  <div class="form-group">
+    <%= form.text_field :last_name, class:"form-control", placeholder:"Last name" %>
+  </div>
+
+</br>
+  <div class="form-group">
+    <%= form.text_field :email, class:"form-control", placeholder:"Email" %>
+  </div>
+
+</br>
+  <div class="form-group">
+    <%= form.text_field :phone, class:"form-control", placeholder:"Phone number" %>
+  </div>
+
+</br>
+  <div class="form-group">
+    <%= form.text_field :twitter, class:"form-control", placeholder:"Twitter" %>
+  </div>
+
+</br>
+
+  <div>
+    <%= form.submit "Add friend", class: 'btn btn-secondary' %>
+  </div>
+<% end %>

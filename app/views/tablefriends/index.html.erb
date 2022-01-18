@@ -1,0 +1,32 @@
+<h1>Friends List</h1>
+
+
+<table class="table table-dark table-striped align-middle">
+  <thead>
+    <tr>
+      <th>Primeiro Nome:</th>
+      <th>Ultimo Nome:</th>
+      <th>Email:</th>
+      <th>Telemovel</th>
+      <th>Twitter</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tablefriends.each do |tablefriend| %>
+    <tr>
+      <td><%= tablefriend.first_name %></td>
+      <td><%= tablefriend.last_name %></td>
+      <td><%= tablefriend.email %></td>
+      <td><%= tablefriend.phone %></td>
+      <td><%= tablefriend.twitter %></td>
+      <td><%= link_to 'Show', tablefriend %></td>
+      <td><%= link_to "Edit", edit_tablefriend_path(tablefriend) %></td>
+      <td><%= button_to 'Destroy', tablefriend, method: :delete, :onclick => "return confirm('Are you sure you want to delete this?')", :class => "btn btn-link .mx-auto" %> </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<%= link_to "Add new friend", new_tablefriend_path, class:"btn btn-dark" %>
